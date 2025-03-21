@@ -8,8 +8,9 @@ classDiagram
     class Usuario {
         +String name
         +Conta account
-        +Feature[] features
+        +List~Feature~ features
         +Transacao ultimaTransacao
+        +List~Noticia~ news
     }
 
     class Conta {
@@ -29,7 +30,15 @@ classDiagram
         +double total
     }
 
+    class Noticia {
+        +String icon
+        +String descricao
+    }
+
+
     Usuario "1" *-- "1" Conta
-    Usuario "1" *-- "N" Feature : contém
-    Usuario "1" *-- "1" UltimaTransacao : tem uma
+    Usuario "1" *-- "N" Feature 
+    Usuario "1" *-- "1" UltimaTransacao 
+    Usuario --> "0..*" Noticia
+
 ```
