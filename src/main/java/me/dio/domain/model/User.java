@@ -11,11 +11,26 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long cpf;
+
     private String name;
+
     @OneToOne(cascade = CascadeType.ALL) //um nao existe sem o outro
     private Account account;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) //fetch para puxar as features assim que vier a conta
     private List<Feature> features;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) //fetch para puxar as features assim que vier a conta
+    private List<Feature> news;
+
+    public List<Feature> getNews() {
+        return news;
+    }
+
+    public void setNews(List<Feature> news) {
+        this.news = news;
+    }
 
     public Long getId() {
         return id;
@@ -47,5 +62,12 @@ public class User {
 
     public void setFeatures(List<Feature> features) {
         this.features = features;
+    }
+
+    public Long getCpf() {
+        return cpf;
+    }
+    public void setCpf(Long cpf) {
+        this.cpf=cpf;
     }
 }

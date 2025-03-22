@@ -10,6 +10,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     //   999.999.999,99
     @Column(precision = 11, scale = 2)
     private BigDecimal saldo;

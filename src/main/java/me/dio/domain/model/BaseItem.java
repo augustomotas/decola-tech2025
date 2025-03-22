@@ -13,6 +13,23 @@ public abstract class BaseItem {
     private String icon;
     private String description;
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
     public String getDescription() {
         return description;
     }
