@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.NoSuchElementException;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     private final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<String> handleUnexpectedException(Throwable unexpectedException){
-        logger.error("Unexpected server ErroR, see te logs.",unexpectedException);
+        logger.error("Unexpected server ErroR, see te logs",unexpectedException);
         return new ResponseEntity<>("Unexpected Server ERROR, veja os logs.", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

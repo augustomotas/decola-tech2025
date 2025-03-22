@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService {
     public User create(User userToCreate) {
         if (userToCreate.getCpf() != null && userRepository.existsByCpf(userToCreate.getCpf()))
             throw new IllegalArgumentException("This user already exists.");
+
         return userRepository.save(userToCreate);
 
     }
