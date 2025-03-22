@@ -15,7 +15,7 @@ public class Transation {
     private String descricao;
     private FormaPagamento formaPagamento;
 
-    @Column(scale = 13, precision = 2)
+    @Column(precision = 13, scale = 2)
     private BigDecimal total;
 
     public Long getId() {
